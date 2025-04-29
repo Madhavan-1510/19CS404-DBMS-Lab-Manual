@@ -120,7 +120,7 @@ CREATE TABLE Table_Name (
 -- Paste Question 2 here
 
 ```sql
--- Paste your SQL code below for Question 2
+create table Members(MemberID INTEGER, MemberName TEXT, JoinDate DATE);
 ```
 
 **Output:**
@@ -132,7 +132,12 @@ CREATE TABLE Table_Name (
 -- Paste Question 3 here
 
 ```sql
--- Paste your SQL code below for Question 3
+CREATE TABLE Invoices 
+(InvoiceID INTEGER UNIQUE,
+InvoiceDate DATE,
+DueDate DATE CHECK(DueDate>InvoiceDate),
+Amount REAL CHECK(Amount>0)
+);
 ```
 
 **Output:**
@@ -144,7 +149,14 @@ CREATE TABLE Table_Name (
 -- Paste Question 4 here
 
 ```sql
--- Paste your SQL code below for Question 4
+ CREATE TABLE ProjectAssignments
+( AssignmentID INTEGER PRIMARY KEY,
+EmployeeID INTEGER,
+ProjectID INTEGER,
+AssignmentDate DATE NOT NULL,
+FOREIGN KEY(EmployeeID) REFERENCES Employees,
+FOREIGN KEY(ProjectID) REFERENCES Projects
+);
 ```
 
 **Output:**
@@ -156,7 +168,10 @@ CREATE TABLE Table_Name (
 -- Paste Question 5 here
 
 ```sql
--- Paste your SQL code below for Question 5
+ALTER TABLE Companies RENAME name TO first_name;
+ALTER TABLE Companies ADD COLUMN mobilenumber number;
+ALTER TABLE Companies ADD COLUMN DOB Date;
+ALTER TABLE Companies ADD COLUMN State varchar(30);
 ```
 
 **Output:**
@@ -168,7 +183,7 @@ CREATE TABLE Table_Name (
 -- Paste Question 6 here
 
 ```sql
--- Paste your SQL code below for Question 6
+insert into Products (ProductID,ProductName,Price,Stock) select ProductID,ProductName,Price,Stock from Discontinued_products;
 ```
 
 **Output:**
