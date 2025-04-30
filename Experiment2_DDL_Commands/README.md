@@ -105,10 +105,14 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
--- Paste Question 1 here
+Create a table named Members with the following columns:
+
+MemberID as INTEGER
+MemberName as TEXT
+JoinDate as DATE
 
 ```sql
--- Paste your SQL code below for Question 1
+create table Members(MemberID INTEGER, MemberName TEXT, JoinDate DATE);
 ```
 
 **Output:**
@@ -117,10 +121,20 @@ CREATE TABLE Table_Name (
 
 **Question 2**
 ---
--- Paste Question 2 here
+Create a table named Invoices with the following constraints:
+
+InvoiceID as INTEGER should be the primary key.
+InvoiceDate as DATE.
+DueDate as DATE should be greater than the InvoiceDate.
+Amount as REAL should be greater than 0.
 
 ```sql
-create table Members(MemberID INTEGER, MemberName TEXT, JoinDate DATE);
+CREATE TABLE Invoices 
+(InvoiceID INTEGER UNIQUE,
+InvoiceDate DATE,
+DueDate DATE CHECK(DueDate>InvoiceDate),
+Amount REAL CHECK(Amount>0)
+);
 ```
 
 **Output:**
@@ -129,7 +143,11 @@ create table Members(MemberID INTEGER, MemberName TEXT, JoinDate DATE);
 
 **Question 3**
 ---
--- Paste Question 3 here
+Create a table named ProjectAssignments with the following constraints:
+AssignmentID as INTEGER should be the primary key.
+EmployeeID as INTEGER should be a foreign key referencing Employees(EmployeeID).
+ProjectID as INTEGER should be a foreign key referencing Projects(ProjectID).
+AssignmentDate as DATE should be NOT NULL.
 
 ```sql
 CREATE TABLE Invoices 
@@ -146,26 +164,7 @@ Amount REAL CHECK(Amount>0)
 
 **Question 4**
 ---
--- Paste Question 4 here
-
-```sql
- CREATE TABLE ProjectAssignments
-( AssignmentID INTEGER PRIMARY KEY,
-EmployeeID INTEGER,
-ProjectID INTEGER,
-AssignmentDate DATE NOT NULL,
-FOREIGN KEY(EmployeeID) REFERENCES Employees,
-FOREIGN KEY(ProjectID) REFERENCES Projects
-);
-```
-
-**Output:**
-
-![Output4](output.png)
-
-**Question 5**
----
--- Paste Question 5 here
+Write a SQL Query  to Rename attribute "name" to "first_name"  and add mobilenumber as number ,DOB as Date,State as varchar(30) in the table Companies.
 
 ```sql
 ALTER TABLE Companies RENAME name TO first_name;
@@ -176,14 +175,33 @@ ALTER TABLE Companies ADD COLUMN State varchar(30);
 
 **Output:**
 
+![Output4](output.png)
+
+**Question 5**
+---
+Insert all products from Discontinued_products into Products.
+
+Table attributes are ProductID, ProductName, Price, Stock
+
+```sql
+insert into Products (ProductID,ProductName,Price,Stock) select ProductID,ProductName,Price,Stock from Discontinued_products;
+```
+
+**Output:**
+
 ![Output5](output.png)
 
 **Question 6**
 ---
--- Paste Question 6 here
+Write an SQL Query to add the attributes designation, net_salary, and dob to the Companies table with the following data types:
+designation as VARCHAR(50)
+net_salary as NUMBER
+dob as DATE
 
 ```sql
-insert into Products (ProductID,ProductName,Price,Stock) select ProductID,ProductName,Price,Stock from Discontinued_products;
+ALTER TABLE Companies ADD COLUMN designation varchar(50);
+ALTER TABLE Companies ADD COLUMN net_salary number;
+ALTER TABLE Companies ADD COLUMN dob date;
 ```
 
 **Output:**
@@ -192,10 +210,21 @@ insert into Products (ProductID,ProductName,Price,Stock) select ProductID,Produc
 
 **Question 7**
 ---
--- Paste Question 7 here
+Create a table named Shipments with the following constraints:
+ShipmentID as INTEGER should be the primary key.
+ShipmentDate as DATE.
+SupplierID as INTEGER should be a foreign key referencing Suppliers(SupplierID).
+OrderID as INTEGER should be a foreign key referencing Orders(OrderID).
 
 ```sql
--- Paste your SQL code below for Question 7
+CREATE TABLE Shipments
+(ShipmentID INTEGER PRIMARY KEY,
+ShipmentDate DATE,
+SupplierID INTEGER,
+OrderID INTEGER,
+FOREIGN KEY(SupplierID) REFERENCES Suppliers,
+FOREIGN KEY(OrderID) REFERENCES Orders
+);
 ```
 
 **Output:**
@@ -204,10 +233,15 @@ insert into Products (ProductID,ProductName,Price,Stock) select ProductID,Produc
 
 **Question 8**
 ---
--- Paste Question 8 here
+create a table named jobs including columns job_id, job_title, min_salary and max_salary, and make sure that, the default value for job_title is blank and min_salary is 8000 and max_salary is NULL will be entered automatically at the time of insertion if no value assigned for the specified columns.
 
 ```sql
--- Paste your SQL code below for Question 8
+CREATE TABLE jobs 
+(job_id INTEGER,
+job_title VARCHAR(30) DEFAULT "",
+min_salary NUMBER DEFAULT '8000',
+max_salary NUMBER DEFAULT NULL
+);
 ```
 
 **Output:**
@@ -216,10 +250,18 @@ insert into Products (ProductID,ProductName,Price,Stock) select ProductID,Produc
 
 **Question 9**
 ---
--- Paste Question 9 here
+In the Cusomers table, insert a record where some fields are NULL, another record where all fields are filled without any NULL values, and a third record where some fields are filled, and others are left as NULL.
+
+CustomerID  Name          Address      City        ZipCode
+----------  ------------  ----------   ----------  ----------
+306         Diana Prince  Themyscira
+307         Bruce Wayne   Wayne Manor  Gotham      10007
+308         Peter Parker  Queens                   11375
 
 ```sql
--- Paste your SQL code below for Question 9
+INSERT INTO Customers(CustomerID,Name,Address,City,ZipCode) VALUES (306,"Diana Prince","Themyscira",NULL,NULL);
+INSERT INTO Customers(CustomerID,Name,Address,City,ZipCode) VALUES (307,"Bruce Wayne","Wayne Manor","Gotham",10007);
+INSERT INTO Customers(CustomerID,Name,Address,City,ZipCode) VALUES (308,"Peter Parker","Queens",NULL,11375);
 ```
 
 **Output:**
@@ -228,10 +270,10 @@ insert into Products (ProductID,ProductName,Price,Stock) select ProductID,Produc
 
 **Question 10**
 ---
--- Paste Question 10 here
+Insert a customer with CustomerID 301, Name Michael Jordan, Address 123 Maple St, City Chicago, and ZipCode 60616 into the Customers table.
 
 ```sql
--- Paste your SQL code below for Question 10
+INSERT INTO Customers(CustomerID,Name,Address,City,ZipCode) VALUES (301,"Michael Jordan","123 Maple St","Chicago",60616);
 ```
 
 **Output:**
