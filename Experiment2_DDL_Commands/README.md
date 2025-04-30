@@ -104,12 +104,7 @@ CREATE TABLE Table_Name (
 ```
 
 **Question 1**
---
-Create a table named Members with the following columns:
-
-MemberID as INTEGER
-MemberName as TEXT
-JoinDate as DATE
+![Question1](https://github.com/Madhavan-1510/Files_RM/blob/main/DDL1q.png)
 
 ```sql
 create table Members(MemberID INTEGER, MemberName TEXT, JoinDate DATE);
@@ -117,16 +112,10 @@ create table Members(MemberID INTEGER, MemberName TEXT, JoinDate DATE);
 
 **Output:**
 
-![Output1](output.png)
+![Output1](https://github.com/Madhavan-1510/Files_RM/blob/main/DDL_1.png)
 
 **Question 2**
----
-Create a table named Invoices with the following constraints:
-
-InvoiceID as INTEGER should be the primary key.
-InvoiceDate as DATE.
-DueDate as DATE should be greater than the InvoiceDate.
-Amount as REAL should be greater than 0.
+![Question2](https://github.com/Madhavan-1510/Files_RM/blob/main/ddl2.png)
 
 ```sql
 CREATE TABLE Invoices 
@@ -139,15 +128,10 @@ Amount REAL CHECK(Amount>0)
 
 **Output:**
 
-![Output2](output.png)
+![Output2](https://github.com/Madhavan-1510/Files_RM/blob/main/DDL_2.png)
 
 **Question 3**
----
-Create a table named ProjectAssignments with the following constraints:
-AssignmentID as INTEGER should be the primary key.
-EmployeeID as INTEGER should be a foreign key referencing Employees(EmployeeID).
-ProjectID as INTEGER should be a foreign key referencing Projects(ProjectID).
-AssignmentDate as DATE should be NOT NULL.
+![Question3](https://github.com/Madhavan-1510/Files_RM/blob/main/ddl3.png)
 
 ```sql
 CREATE TABLE Invoices 
@@ -160,11 +144,10 @@ Amount REAL CHECK(Amount>0)
 
 **Output:**
 
-![Output3](output.png)
+![Output3](https://github.com/Madhavan-1510/Files_RM/blob/main/DDL_3.png)
 
 **Question 4**
----
-Write a SQL Query  to Rename attribute "name" to "first_name"  and add mobilenumber as number ,DOB as Date,State as varchar(30) in the table Companies.
+![Question4](https://github.com/Madhavan-1510/Files_RM/blob/main/ddl4.png)
 
 ```sql
 ALTER TABLE Companies RENAME name TO first_name;
@@ -175,13 +158,10 @@ ALTER TABLE Companies ADD COLUMN State varchar(30);
 
 **Output:**
 
-![Output4](output.png)
+![Output4](https://github.com/Madhavan-1510/Files_RM/blob/main/DDL_4.png)
 
 **Question 5**
----
-Insert all products from Discontinued_products into Products.
-
-Table attributes are ProductID, ProductName, Price, Stock
+![Question5](https://github.com/Madhavan-1510/Files_RM/blob/main/dd5.png)
 
 ```sql
 insert into Products (ProductID,ProductName,Price,Stock) select ProductID,ProductName,Price,Stock from Discontinued_products;
@@ -189,14 +169,10 @@ insert into Products (ProductID,ProductName,Price,Stock) select ProductID,Produc
 
 **Output:**
 
-![Output5](output.png)
+![Output5](https://github.com/Madhavan-1510/Files_RM/blob/main/DDL_5.png)
 
 **Question 6**
----
-Write an SQL Query to add the attributes designation, net_salary, and dob to the Companies table with the following data types:
-designation as VARCHAR(50)
-net_salary as NUMBER
-dob as DATE
+![Question6](https://github.com/Madhavan-1510/Files_RM/blob/main/ddl6.png)
 
 ```sql
 ALTER TABLE Companies ADD COLUMN designation varchar(50);
@@ -206,15 +182,10 @@ ALTER TABLE Companies ADD COLUMN dob date;
 
 **Output:**
 
-![Output6](output.png)
+![Output6](https://github.com/Madhavan-1510/Files_RM/blob/main/DDL_6.png)
 
 **Question 7**
----
-Create a table named Shipments with the following constraints:
-ShipmentID as INTEGER should be the primary key.
-ShipmentDate as DATE.
-SupplierID as INTEGER should be a foreign key referencing Suppliers(SupplierID).
-OrderID as INTEGER should be a foreign key referencing Orders(OrderID).
+![Question7](https://github.com/Madhavan-1510/Files_RM/blob/main/ddl7.png)
 
 ```sql
 CREATE TABLE Shipments
@@ -229,11 +200,10 @@ FOREIGN KEY(OrderID) REFERENCES Orders
 
 **Output:**
 
-![Output7](output.png)
+![Output7](https://github.com/Madhavan-1510/Files_RM/blob/main/DDL_7.png)
 
 **Question 8**
----
-create a table named jobs including columns job_id, job_title, min_salary and max_salary, and make sure that, the default value for job_title is blank and min_salary is 8000 and max_salary is NULL will be entered automatically at the time of insertion if no value assigned for the specified columns.
+![Question8](https://github.com/Madhavan-1510/Files_RM/blob/main/ddl8.png)
 
 ```sql
 CREATE TABLE jobs 
@@ -246,17 +216,10 @@ max_salary NUMBER DEFAULT NULL
 
 **Output:**
 
-![Output8](output.png)
+![Output8](https://github.com/Madhavan-1510/Files_RM/blob/main/DDL_8.png)
 
 **Question 9**
----
-In the Cusomers table, insert a record where some fields are NULL, another record where all fields are filled without any NULL values, and a third record where some fields are filled, and others are left as NULL.
-
-CustomerID  Name          Address      City        ZipCode
-----------  ------------  ----------   ----------  ----------
-306         Diana Prince  Themyscira
-307         Bruce Wayne   Wayne Manor  Gotham      10007
-308         Peter Parker  Queens                   11375
+![Question9](https://github.com/Madhavan-1510/Files_RM/blob/main/ddl9.png)
 
 ```sql
 INSERT INTO Customers(CustomerID,Name,Address,City,ZipCode) VALUES (306,"Diana Prince","Themyscira",NULL,NULL);
@@ -266,11 +229,10 @@ INSERT INTO Customers(CustomerID,Name,Address,City,ZipCode) VALUES (308,"Peter P
 
 **Output:**
 
-![Output9](output.png)
+![Output9](https://github.com/Madhavan-1510/Files_RM/blob/main/DDL_9.png)
 
 **Question 10**
----
-Insert a customer with CustomerID 301, Name Michael Jordan, Address 123 Maple St, City Chicago, and ZipCode 60616 into the Customers table.
+![Question10](https://github.com/Madhavan-1510/Files_RM/blob/main/ddl10.png)
 
 ```sql
 INSERT INTO Customers(CustomerID,Name,Address,City,ZipCode) VALUES (301,"Michael Jordan","123 Maple St","Chicago",60616);
@@ -278,7 +240,7 @@ INSERT INTO Customers(CustomerID,Name,Address,City,ZipCode) VALUES (301,"Michael
 
 **Output:**
 
-![Output10](output.png)
+![Output10](https://github.com/Madhavan-1510/Files_RM/blob/main/DDL_10.png)
 
 
 ## RESULT
