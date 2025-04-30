@@ -38,123 +38,152 @@ HAVING condition;
 
 **Question 1**
 --
--- Paste Question 1 here
+![Question1](https://github.com/user-attachments/assets/050d5621-4398-433e-859d-5c345be6132d)
+
 
 ```sql
--- Paste your SQL code below for Question 1
+select Specialty,Gender,count(DoctorID) as TotalDoctors from DOCTORS
+group by Specialty,Gender;
 ```
 
 **Output:**
 
-![Output1](output.png)
+![Output1](https://github.com/user-attachments/assets/ddbeb28a-4944-4d1c-b7a0-90eef86e4317)
 
 **Question 2**
 ---
--- Paste Question 2 here
+![image](https://github.com/user-attachments/assets/9cf4ba2e-0139-490c-882c-dc710eee9f66)
+
 
 ```sql
--- Paste your SQL code below for Question 2
+select substr(Date,1,7) as Month, count(RecordID) as TotalRecords from medicalrecords
+group by Month;
 ```
 
 **Output:**
 
-![Output2](output.png)
+![Output2](https://github.com/user-attachments/assets/199fd353-cf43-4e01-8fb8-f857f6dc8995)
 
 **Question 3**
 ---
--- Paste Question 3 here
+![image](https://github.com/user-attachments/assets/9ccd0504-abea-492a-8bfa-b0851808c88a)
+
 
 ```sql
--- Paste your SQL code below for Question 3
+select PatientID, count(AppointmentID)as TotalAppointments from appointments
+group by patientid
 ```
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/515a34cc-0216-4d15-b2bd-33b4a50d7f3c)
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+![image](https://github.com/user-attachments/assets/51475f5a-e881-4ac2-b8e6-fb3381a39364)
+
 
 ```sql
--- Paste your SQL code below for Question 4
+select sum(inventory)as total_available_amount from fruits
+where price>0.5;
 ```
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/5dec8b49-c3ed-49ba-8f8d-69c89219d001)
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+![image](https://github.com/user-attachments/assets/58aff6d2-ac5b-4be8-9b7d-928defd8674a)
+
 
 ```sql
--- Paste your SQL code below for Question 5
+select MIN(purch_amt) as MINIMUM from orders;
 ```
 
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/64c17ab2-ec8a-45fa-ae21-56407e47b832)
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+![image](https://github.com/user-attachments/assets/4c359d2b-ca6e-45aa-9b40-50ac023fd577)
+
 
 ```sql
--- Paste your SQL code below for Question 6
+select Count(id) as COUNT from employee
+where age>32
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/2b9a5029-0ed1-4c84-8f44-08210293170d)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+![image](https://github.com/user-attachments/assets/0c50f593-b0d0-4f24-b75b-810da31ae495)
+
 
 ```sql
--- Paste your SQL code below for Question 7
+select count(customer_id) as COUNT from customer
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/29d1d9e5-d754-44e6-8a83-0b02cd7f0729)
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+![image](https://github.com/user-attachments/assets/5f4fc90d-a96a-489e-976d-86d240c359fc)
+
 
 ```sql
--- Paste your SQL code below for Question 8
+select city,sum(income) as Income from employee
+group by city
+having Income>200000;
 ```
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/9bdda9fe-918b-4f90-9221-d0bcd3a40066)
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+![image](https://github.com/user-attachments/assets/386d656e-199c-4827-8d7e-e1bfc40cbe15)
+
 
 ```sql
--- Paste your SQL code below for Question 9
+select jdate, SUM(workhour) from employee1
+group by jdate
+having sum(workhour)>40;
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/1612a662-7719-4c9b-bda8-6722c09b38d7)
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+![image](https://github.com/user-attachments/assets/e92a06c7-9d2e-4bda-b18b-fcb63e84160f)
+
 
 ```sql
--- Paste your SQL code below for Question 10
+select jdate,AVG(workhour) from employee1
+group by jdate
+having avg(workhour)<10
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/b09503c6-fb20-4b57-a5f9-7d64e1c7f9af)
+
 
 
 ## RESULT
