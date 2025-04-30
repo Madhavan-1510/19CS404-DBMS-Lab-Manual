@@ -104,6 +104,7 @@ CREATE TABLE Table_Name (
 ```
 
 **Question 1**
+---
 ![Question1](https://github.com/Madhavan-1510/Files_RM/blob/main/DDL1q.png)
 
 ```sql
@@ -115,6 +116,7 @@ create table Members(MemberID INTEGER, MemberName TEXT, JoinDate DATE);
 ![Output1](https://github.com/Madhavan-1510/Files_RM/blob/main/DDL_1.png)
 
 **Question 2**
+---
 ![Question2](https://github.com/Madhavan-1510/Files_RM/blob/main/ddl2.png)
 
 ```sql
@@ -131,6 +133,7 @@ Amount REAL CHECK(Amount>0)
 ![Output2](https://github.com/Madhavan-1510/Files_RM/blob/main/DDL_2.png)
 
 **Question 3**
+---
 ![Question3](https://github.com/Madhavan-1510/Files_RM/blob/main/ddl3.png)
 
 ```sql
@@ -147,6 +150,7 @@ Amount REAL CHECK(Amount>0)
 ![Output3](https://github.com/Madhavan-1510/Files_RM/blob/main/DDL_3.png)
 
 **Question 4**
+---
 ![Question4](https://github.com/Madhavan-1510/Files_RM/blob/main/ddl4.png)
 
 ```sql
@@ -160,7 +164,9 @@ ALTER TABLE Companies ADD COLUMN State varchar(30);
 
 ![Output4](https://github.com/Madhavan-1510/Files_RM/blob/main/DDL_4.png)
 
+
 **Question 5**
+---
 ![Question5](https://github.com/Madhavan-1510/Files_RM/blob/main/dd5.png)
 
 ```sql
@@ -172,6 +178,7 @@ insert into Products (ProductID,ProductName,Price,Stock) select ProductID,Produc
 ![Output5](https://github.com/Madhavan-1510/Files_RM/blob/main/DDL_5.png)
 
 **Question 6**
+---
 ![Question6](https://github.com/Madhavan-1510/Files_RM/blob/main/ddl6.png)
 
 ```sql
@@ -185,6 +192,7 @@ ALTER TABLE Companies ADD COLUMN dob date;
 ![Output6](https://github.com/Madhavan-1510/Files_RM/blob/main/DDL_6.png)
 
 **Question 7**
+---
 ![Question7](https://github.com/Madhavan-1510/Files_RM/blob/main/ddl7.png)
 
 ```sql
@@ -203,6 +211,7 @@ FOREIGN KEY(OrderID) REFERENCES Orders
 ![Output7](https://github.com/Madhavan-1510/Files_RM/blob/main/DDL_7.png)
 
 **Question 8**
+---
 ![Question8](https://github.com/Madhavan-1510/Files_RM/blob/main/ddl8.png)
 
 ```sql
@@ -219,6 +228,7 @@ max_salary NUMBER DEFAULT NULL
 ![Output8](https://github.com/Madhavan-1510/Files_RM/blob/main/DDL_8.png)
 
 **Question 9**
+---
 ![Question9](https://github.com/Madhavan-1510/Files_RM/blob/main/ddl9.png)
 
 ```sql
@@ -232,6 +242,7 @@ INSERT INTO Customers(CustomerID,Name,Address,City,ZipCode) VALUES (308,"Peter P
 ![Output9](https://github.com/Madhavan-1510/Files_RM/blob/main/DDL_9.png)
 
 **Question 10**
+---
 ![Question10](https://github.com/Madhavan-1510/Files_RM/blob/main/ddl10.png)
 
 ```sql
