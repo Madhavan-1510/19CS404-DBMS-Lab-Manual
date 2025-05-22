@@ -31,7 +31,7 @@ END;
 - Write an **AFTER INSERT** trigger on the `employees` table to log the new data into the `employee_log` table.
 
 ### ANSWER:
-```
+```sql
 CREATE OR REPLACE TRIGGER trg_log_employee_insert
 AFTER INSERT ON employees
 FOR EACH ROW
@@ -40,14 +40,14 @@ BEGIN
    VALUES (:NEW.emp_id, :NEW.emp_name, SYSDATE);
 END;
 ```
-```
+```sql
 CREATE TABLE employee_log (
    emp_id     NUMBER,
    emp_name   VARCHAR2(50),
    action_time DATE
 );
 ```
-```
+```sql
 CREATE OR REPLACE TRIGGER trg_log_employee_insert
 AFTER INSERT ON employees
 FOR EACH ROW
@@ -56,10 +56,10 @@ BEGIN
    VALUES (:NEW.emp_id, :NEW.emp_name, SYSDATE);
 END;
 ```
-```
+```sql
 INSERT INTO employees VALUES (201, 'Ravi', 'Intern', 3500, 40);
 ```
-```
+```sql
 SELECT * FROM employee_log;
 ```
 
@@ -78,23 +78,23 @@ SELECT * FROM employee_log;
 - Use `RAISE_APPLICATION_ERROR` to prevent deletion and issue a custom error message.
 
 ### ANSWER:
-```
+```sql
 CREATE TABLE sensitive_data (
    id   NUMBER,
    info VARCHAR2(100)
 );
 ```
-```
+```sql
 CREATE OR REPLACE TRIGGER trg_prevent_sensitive_delete
 BEFORE DELETE ON sensitive_data
 BEGIN
    RAISE_APPLICATION_ERROR(-20001, 'ERROR: Deletion not allowed on this table.');
 END;
 ```
-```
+```sql
 INSERT INTO sensitive_data VALUES (1, 'Top Secret');
 ```
-```
+```sql
 DELETE FROM sensitive_data WHERE id = 1;
 ```
 
@@ -112,7 +112,7 @@ DELETE FROM sensitive_data WHERE id = 1;
 - Write a **BEFORE UPDATE** trigger on the `products` table to set the `last_modified` column to the current timestamp whenever an update occurs.
 
 ### ANSWER:
-```
+```sql
 CREATE TABLE products (
    prod_id        NUMBER,
    prod_name      VARCHAR2(50),
@@ -120,7 +120,7 @@ CREATE TABLE products (
    last_modified  DATE
 );
 ```
-```
+```sql
 CREATE OR REPLACE TRIGGER trg_update_last_modified
 BEFORE UPDATE ON products
 FOR EACH ROW
@@ -128,13 +128,13 @@ BEGIN
    :NEW.last_modified := SYSDATE;
 END;
 ```
-```
+```sql
 INSERT INTO products VALUES (1, 'Laptop', 50000, NULL);
 ```
-```
+```sql
 UPDATE products SET price = 52000 WHERE prod_id = 1;
 ```
-```
+```sql
 SELECT * FROM products;
 ```
 
@@ -152,23 +152,23 @@ SELECT * FROM products;
 - Write an **AFTER UPDATE** trigger on the `customer_orders` table to increment the counter in the `audit_log` table every time a record is updated.
 
 ### ANSWER:
-```
+```sql
 CREATE TABLE audit_log (
    table_name VARCHAR2(50),
    update_count NUMBER
 );
 ```
-```
+```sql
 INSERT INTO audit_log VALUES ('customer_orders', 0);
 ```
-```
+```sql
 CREATE TABLE customer_orders (
    order_id   NUMBER,
    cust_name  VARCHAR2(50),
    amount     NUMBER
 );
 ```
-```
+```sql
 CREATE OR REPLACE TRIGGER trg_count_updates
 AFTER UPDATE ON customer_orders
 FOR EACH ROW
@@ -178,13 +178,13 @@ BEGIN
    WHERE table_name = 'customer_orders';
 END;
 ```
-```
+```sql
 INSERT INTO customer_orders VALUES (1, 'Arun', 3000);
 ```
-```
+```sql
 UPDATE customer_orders SET amount = 3200 WHERE order_id = 1;
 ```
-```
+```sql
 SELECT * FROM audit_log;
 ```
 
@@ -202,7 +202,7 @@ SELECT * FROM audit_log;
 - If the condition is not met, raise an error to prevent the insert.
 
 ### ANSWER:
-```
+```sql
 CREATE OR REPLACE TRIGGER trg_check_salary
 BEFORE INSERT ON employees
 FOR EACH ROW
@@ -212,10 +212,10 @@ BEGIN
    END IF;
 END;
 ```
-```
+```sql
 INSERT INTO employees VALUES (202, 'LowPay', 'Trainee', 2000, 20);
 ```
-```
+```sql
 INSERT INTO employees VALUES (203, 'GoodPay', 'Trainee', 3500, 20)
 ```
 
